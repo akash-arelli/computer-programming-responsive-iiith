@@ -233,9 +233,9 @@ window.view = {
  		//this.getCanvas();
  		this.canvasContext.beginPath();
  		this.canvasContext.fillStyle = '#C2D995';
- 		this.canvasContext.fillRect (75, 75, 200, 250);
+ 		this.canvasContext.fillRect (40, 40, 210, 260);
  		this.canvasContext.strokeStyle = '#000000';
- 		this.canvasContext.rect(75, 75, 200, 250);
+ 		this.canvasContext.rect(40, 40, 210, 260);
  		this.canvasContext.stroke();	
  	},
  	// drawCircle: draws circle on canvasContext according given x and y coordinates.
@@ -248,7 +248,7 @@ window.view = {
  	// displayText: draws given text on canvasContext according given x and y coordinates.
     	displayText: function (text, x, y) {
     		this.canvasContext.beginPath();
-       		this.canvasContext.font = 'italic 20px Arial';
+       		this.canvasContext.font = 'italic 20px Arial';     
 		this.canvasContext.fillText(text, x, y);
     	},
     	// displayTextWithColour: draws given text  with colour on canvasContext according given x and y coordinates.
@@ -262,14 +262,14 @@ window.view = {
     	displayFigures: function () {
     		this.drawDots();
     		this.drawFillRectangle();
-    		this.drawCircle(75, 75, '#000000');
-		this.drawCircle(275, 75, '#000000');
-		this.drawCircle(75, 325, '#000000');
-		this.drawCircle(275, 325, '#000000');
-		this.displayText('(x1, y1)', 65, 65); 
-		this.displayText('(x2, y2)', 265, 65);
-		this.displayText('(x3, y3)', 265, 345);
-		this.displayText('(x4, y4)', 75, 345);
+    		this.drawCircle(050, 050, '#000000');
+		this.drawCircle(250, 050, '#000000');
+		this.drawCircle(250, 300, '#000000');
+		this.drawCircle(050, 300, '#000000');
+		this.displayText('(x1, y1)', 050, 050); 
+		this.displayText('(x2, y2)', 250, 050);
+		this.displayText('(x3, y3)', 250, 300);
+		this.displayText('(x4, y4)', 050, 300);
 		this.canvasContext.save();
     	},
 	/* validationInput: check validation of input that is given by user and if input value is valid 
@@ -288,7 +288,7 @@ window.view = {
 		model.valueOfX = Number(valueOfX);
 		model.valueOfY = Number(valueOfY);
 		this.clearOutputValues();
-		this.restoreCanvas();
+		this.restoreCanvas();  
 		this.changePropertyOfElements();
 		this.setInnerHtml('xInnerText', model.valueOfX);
 		this.setInnerHtml('yInnerText', model.valueOfY);
@@ -355,7 +355,7 @@ window.view = {
 			if (this.nextSiblingElement.id === 'codeContentIfElse4Id' || this.nextOfnextSiblingElement.id === 'codeContentIfElse6Id') {
 				if (this.nextSiblingElement.id === 'codeContentIfElse4Id') 
 					this.codeExecutionWithColour();
-				else if (model.valueOfX >= 75) 
+				else if (model.valueOfX >= 050)  
 					this.changeFlagValue('flagValue1', 'codeContentIfElse6Id', '1');
 				else
 					this.codeExecutionWithColourAndId('codeContentIfElse8Id');
@@ -363,7 +363,7 @@ window.view = {
 			if (this.nextOfnextSiblingElement.id === 'codeContentIfElse8Id' || this.nextOfnextSiblingElement.id === 'codeContentIfElse10Id') {
 				if (this.nextOfnextSiblingElement.id === 'codeContentIfElse8Id') 
 					this.codeExecutionWithColourAndId('codeContentIfElse8Id');
-				else if (model.valueOfX <= 275) 
+				else if (model.valueOfX <= 250) 
 					this.changeFlagValue('flagValue2', 'codeContentIfElse10Id', '1');
 				else
 					this.codeExecutionWithColourAndId('codeContentIfElse12Id');
@@ -371,7 +371,7 @@ window.view = {
 			if (this.nextOfnextSiblingElement.id === 'codeContentIfElse12Id' || this.nextOfnextSiblingElement.id === 'codeContentIfElse14Id') {
 				if (this.nextOfnextSiblingElement.id === 'codeContentIfElse12Id') 
 					this.codeExecutionWithColourAndId('codeContentIfElse12Id');
-				else if (model.valueOfY >= 75) 
+				else if (model.valueOfY >= 50) 
 					this.changeFlagValue('flagValue3', 'codeContentIfElse14Id', '1');
 				else
 					this.codeExecutionWithColourAndId('codeContentIfElse16Id');
@@ -379,7 +379,7 @@ window.view = {
 			if (this.nextOfnextSiblingElement.id === 'codeContentIfElse16Id' || this.nextOfnextSiblingElement.id === 'codeContentIfElse18Id') {
 				if (this.nextOfnextSiblingElement.id === 'codeContentIfElse16Id')
 					this.codeExecutionWithColourAndId('codeContentIfElse16Id');
-				else if (model.valueOfY <= 325) 
+				else if (model.valueOfY <= 300) 
 					this.changeFlagValue('flagValue4', 'codeContentIfElse18Id', '1');
 				else
 					this.codeExecutionWithColourAndId('codeContentIfElse20Id');
@@ -387,7 +387,7 @@ window.view = {
 			if (this.nextOfnextSiblingElement.id === 'codeContentIfElse20Id' || this.nextOfnextSiblingElement.id === 'codeContentIfElse22Id') {
 				if (this.nextOfnextSiblingElement.id === 'codeContentIfElse20Id') 
 					this.codeExecutionWithColourAndId('codeContentIfElse20Id');
-				else if (model.valueOfX > 75 && model.valueOfX < 275 && model.valueOfY > 75 && model.valueOfY < 325) {
+				else if (model.valueOfX > 50 && model.valueOfX < 250 && model.valueOfY > 50 && model.valueOfY < 300) {
 					this.codeExecutionWithColourAndId('codeContentIfElse22Id');
 					this.displayTextWithColour('Output: INSIDE', 100, 40, '#FF2400');
 				}
@@ -418,35 +418,35 @@ window.view = {
 		}
 		if (this.nextSiblingElement.id === 'codeContentIfElseIf3Id')			
 			this.codeExecutionWithColourAndId('codeContentIfElseIf3aId');
-		if (this.nextSiblingElement.id === 'codeContentIfElseIf3bId' && model.valueOfX < 75) 
+		if (this.nextSiblingElement.id === 'codeContentIfElseIf3bId' && model.valueOfX < 50) 
 			this.changeFlagValue('flagValue1', 'codeContentIfElseIf5Id', '0');
-		if (this.nextSiblingElement.id === 'codeContentIfElseIf3bId' && model.valueOfX > 275) 
+		if (this.nextSiblingElement.id === 'codeContentIfElseIf3bId' && model.valueOfX > 250) 
 			this.codeExecutionWithColourAndId('codeContentIfElseIf3cId');
-		if (this.nextSiblingElement.id === 'codeContentIfElseIf3dId' && model.valueOfX > 275) 
+		if (this.nextSiblingElement.id === 'codeContentIfElseIf3dId' && model.valueOfX > 250) 
 			this.changeFlagValue('flagValue1', 'codeContentIfElseIf5Id', '0');
-		if (this.nextSiblingElement.id === 'codeContentIfElseIf3bId' && (75 <= model.valueOfX) && (model.valueOfX <= 275)) 
+		if (this.nextSiblingElement.id === 'codeContentIfElseIf3bId' && (50 <= model.valueOfX) && (model.valueOfX <= 250)) 
 			this.codeExecutionWithColourAndId('codeContentIfElseIf3cId');
-		if (this.nextSiblingElement.id === 'codeContentIfElseIf3dId' && (75 <= model.valueOfX) && (model.valueOfX <= 275)) 
+		if (this.nextSiblingElement.id === 'codeContentIfElseIf3dId' && (50 <= model.valueOfX) && (model.valueOfX <= 250)) 
 			this.codeExecutionWithColourAndId('codeContentIfElseIf7aId');
-		if (this.nextSiblingElement.id === 'codeContentIfElseIf7bId' && model.valueOfY < 75) 
+		if (this.nextSiblingElement.id === 'codeContentIfElseIf7bId' && model.valueOfY < 50) 
 			this.changeFlagValue('flagValue1', 'codeContentIfElseIf9Id', '0');
-		if (this.nextSiblingElement.id === 'codeContentIfElseIf7bId' && model.valueOfY > 325) 
+		if (this.nextSiblingElement.id === 'codeContentIfElseIf7bId' && model.valueOfY > 300) 
 			this.codeExecutionWithColourAndId('codeContentIfElseIf7cId');
-		if (this.nextSiblingElement.id === 'codeContentIfElseIf7dId' && model.valueOfY > 325) 
+		if (this.nextSiblingElement.id === 'codeContentIfElseIf7dId' && model.valueOfY > 300) 
 			this.changeFlagValue('flagValue1', 'codeContentIfElseIf9Id', '0');
-		if (this.nextSiblingElement.id === 'codeContentIfElseIf7bId' && (75 <= model.valueOfY) && (model.valueOfY <= 325)) 
+		if (this.nextSiblingElement.id === 'codeContentIfElseIf7bId' && (75 <= model.valueOfY) && (model.valueOfY <= 300)) 
 			this.codeExecutionWithColourAndId('codeContentIfElseIf7cId');
-		if (this.nextSiblingElement.id === 'codeContentIfElseIf7dId' && (75 <= model.valueOfX) && (model.valueOfX <= 275) && (75 <= model.valueOfY) && (model.valueOfY <= 325)) 
+		if (this.nextSiblingElement.id === 'codeContentIfElseIf7dId' && (50 <= model.valueOfX) && (model.valueOfX <= 250) && (50 <= model.valueOfY) && (model.valueOfY <= 300)) 
 			this.codeExecutionWithColourAndId('codeContentIfElseIf11Id');
 		if ((this.nextSiblingElement.id === 'codeContentIfElseIf12Id' || this.nextSiblingElement.id === 'codeContentIfElseIf14Id' || this.nextSiblingElement.id === 'codeContentIfElseIf16Id') && (75 <= model.valueOfX) && (model.valueOfX <= 275) && (75 <= model.valueOfY) && (model.valueOfY <= 325))	{
 			this.changeFlagValue('flagValue1', this.nextOfnextSiblingElement.id, '1');
-			if ((this.nextSiblingElement.id === 'codeContentIfElseIf16Id') && (75 <= model.valueOfX) && (model.valueOfX <= 275) && (75 <= model.valueOfY) && (model.valueOfY <= 325)) {
+			if ((this.nextSiblingElement.id === 'codeContentIfElseIf16Id') && (50 <= model.valueOfX) && (model.valueOfX <= 250) && (50 <= model.valueOfY) && (model.valueOfY <= 300)) {
 				this.displayTextWithColour('Output: INSIDE', 100, 40, '#FF2400');
 			}
 		}
 		if (this.nextSiblingElement.id ==='codeContentIfElseIf6Id' || this.nextSiblingElement.id ==='codeContentIfElseIf10Id') 
 			this.codeExecutionWithColourAndId('codeContentIfElseIf15Id');
-		if (this.nextSiblingElement.id === 'codeContentIfElseIf16Id' && !((75 <= model.valueOfX) && (model.valueOfX <= 275) && (75 <= model.valueOfY) && (model.valueOfY <= 325))) 
+		if (this.nextSiblingElement.id === 'codeContentIfElseIf16Id' && !((50 <= model.valueOfX) && (model.valueOfX <= 250) && (50 <= model.valueOfY) && (model.valueOfY <= 300))) 
 			this.codeExecutionWithColourAndId('codeContentIfElseIf19Id');
 		if (this.nextSiblingElement.id === 'codeContentIfElseIf20Id') {
 			this.codeExecutionWithColourAndId('codeContentIfElseIf21Id');
