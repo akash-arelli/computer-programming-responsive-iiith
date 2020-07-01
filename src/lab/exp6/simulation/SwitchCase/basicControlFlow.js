@@ -247,6 +247,13 @@ window.view = {
 				this.setInnerHtml('outputDayId', 'HOLIDAY');
 	 		}
 	 	}
+	 	 	if (model.inputNumber === 6) {
+	 		if (this.nextSiblingElement.id === 'holidayId') {
+				this.codeExecutionWithColour();
+				this.changeOpacity('holidayImage');
+				this.setInnerHtml('outputDayId', 'HOLIDAY');
+	 		}
+	 	}
 		if (this.nextSiblingElement.id === 'ifId')
 			this.codeExecutionWithColour();
 		if (this.nextSiblingElement.id === 'closeBrc2Id' || this.nextSiblingElement.id === 'elseId' || this.nextSiblingElement.id === 'elseIfId') {
