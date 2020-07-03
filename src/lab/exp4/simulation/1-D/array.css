@@ -394,7 +394,8 @@ body {
     left: 2%;
 }
 
-.currentKeyValue {
+
+currentKeyValue {
     position: absolute;
     border: 1px solid #CCC;
     height: 100%;

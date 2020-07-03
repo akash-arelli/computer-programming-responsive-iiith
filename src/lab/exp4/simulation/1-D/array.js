@@ -69,25 +69,37 @@ window.view = {
 		else
 			alert( 'Size of the array must be an Integer !' )
 	},
+
+		takeInputFromRadioBox: function() {
+		var element = document.getElementsByName('radio_group')
+		if ( element[0].checked )
+			{this.generateRandomNumbers();
+			var x = document.getElementById('userInput');
+      if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  };     }
+		else if (element[1].checked)
+		{     this.getUserInput()
+};
+	},
+		
 	generateRandomNumbers: function() {
+
 		var inputValue = this.getArraySize()
 		for ( i = 0 ; i < inputValue ; i++ ) {
 			var random = Math.floor(Math.random()*15)
 			this.numbers.push(String(random))
 		}
-	},
-	getUserInput: function() {
+	},              
+			getUserInput: function() {
 		var inputValue = document.getElementById('userInput').value
 		inputValue = inputValue.replace(/\s/g, ',')
 		this.numbers = inputValue.split(',')
 	},
-	takeInputFromRadioBox: function() {
-		var element = document.getElementsByName('radio_group')
-		if ( element[0].checked )
-			this.generateRandomNumbers()
-		else if (element[1].checked)
-			this.getUserInput()
-	},
+
+
 	createBoxes: function() {
 		for ( i = 0 ; i < this.numbers.length ; i++ ) {
 			var outerDiv = document.createElement('div')
@@ -174,6 +186,7 @@ window.view = {
 		document.getElementById('key').innerHTML = element[this.i].firstChild.innerHTML
 		var elements = document.getElementById('sortingDiv').childNodes
 		elements[this.i].firstChild.style.background = '#F5B941'
+		
 	},
 	swapText: function() {
 		var elements = document.getElementById('sortingDiv').childNodes
